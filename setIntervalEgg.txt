@@ -1,0 +1,40 @@
+var intervalId = null;
+var varCounter = 0;
+var varName = function(){
+     if(varCounter <= 10) {
+          varCounter++;
+          /* your code goes here */
+     } else {
+          clearInterval(intervalId);
+     }
+};
+
+$(document).ready(function(){
+     intervalId = setInterval(varName, 10000);
+});
+
+<a onclick="start(this);">Start</a>
+
+<script>
+function start(d){
+    if (d.interval){
+        clearInterval(d.interval);
+        d.innerHTML='Start';
+    } else {
+        d.interval=setInterval(function(){
+          //refresh here
+        },10000);
+        d.innerHTML='Stop';
+    }
+}
+</script>
+
+var trigger = setInterval(function() { 
+  if (document.getElementById('sandroalvares') != null) {
+    document.write('<div id="sandroalvares" style="background: yellow; width:200px;">SandroAlvares</div>');
+    clearInterval(trigger);
+    console.log('Success');
+  } else {
+    console.log('Trigger!!');
+  }
+}, 1000);
